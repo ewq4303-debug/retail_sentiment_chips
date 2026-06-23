@@ -1,0 +1,27 @@
+# 全域參數（SPEC §1 Config）。集中管理，pipeline 各模組讀此檔。
+RETAIL_TIER_MAX_SHARES: 5000          # 散戶存量上界（≤5張）；常見替代 10000(≤10張)
+BIG_HOLDER_RULE:                      # 大戶門檻隨股價，映射到最近的集保級距邊界
+  high_price_threshold: 50            # 元
+  big_tier_min_shares_high: 400000    # 股價>50 → ≥400張，近似 400,001 級距以上
+  big_tier_min_shares_low: 1000000    # 股價≤50 → ≥1000張，用 1,000,001↑ 頂層
+
+Z_WINDOW: 60                          # 日頻 z-score 視窗（交易日）
+DCA_TREND_WINDOW: 60
+DCA_SEASONAL_LOOKBACK_MONTHS: 12
+NOISE_RECONCILE_TOL: 0.15             # 流量重整對帳容差（相對 ΔStock）
+ENABLE_SPREAD_FILTER: false           # ⚠️ 方向待實證，預設關閉，見 §5
+ARB_RATIO_Z_THRESHOLD: 2.0
+W_ARB_FLOOR: 0.2                       # 高套利嫌疑時盤中零股最低權重
+ARB_K: 4.0                            # §5 W_arb 衰減斜率分母 k
+
+# §3.3 暫定路徑方向權重（α 價差項 / β 報酬項），預設 0.5/0.5 待校
+PROV_ALPHA: 0.5
+PROV_BETA: 0.5
+
+# §10 連續分數權重與 gating
+MATRIX_W_INST: 0.5                    # w1：法人方向權重
+MATRIX_W_RETAIL: 0.5                  # w2：散戶情緒（取負）權重
+
+# Pipeline 行為
+LOOKBACK_TRADING_DAYS: 180            # 每次回補的交易日視窗
+ETF_DCA_INTENSITY: 1.0               # ETF 給較高 dca_intensity（§4）

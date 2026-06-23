@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>散戶情緒籌碼指標 · Retail Sentiment Chips</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --border:#30363d; --fg:#e6edf3; --muted:#8b949e;
+          --up:#f85149; --down:#3fb950; --accent:#58a6ff; --warn:#d29922; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font-family:-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif; }
+  header { padding:18px 24px; border-bottom:1px solid var(--border); display:flex;
+           align-items:baseline; gap:16px; flex-wrap:wrap; }
+  header h1 { font-size:18px; margin:0; font-weight:600; }
+  header .meta { color:var(--muted); font-size:12px; }
+  .wrap { display:grid; grid-template-columns:300px 1fr; gap:0; min-height:calc(100vh - 60px); }
+  .sidebar { border-right:1px solid var(--border); padding:12px; overflow:auto; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:8px;
+          padding:10px 12px; margin-bottom:8px; cursor:pointer; transition:border-color .15s; }
+  .card:hover { border-color:var(--accent); }
+  .card.active { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent) inset; }
+  .card .id { font-size:15px; font-weight:600; }
+  .card .row { display:flex; justify-content:space-between; align-items:center; margin-top:4px; }
+  .badge { font-size:11px; padding:2px 8px; border-radius:10px; font-weight:600; }
+  .b-CONFIRMED { background:rgba(63,185,80,.15); color:var(--down); }
+  .b-NOISE { background:rgba(139,148,158,.18); color:var(--muted); }
+  .b-PENDING { background:rgba(210,153,34,.18); color:var(--warn); }
+  .b-PROVISIONAL { background:rgba(88,166,255,.15); color:var(--accent); }
+  .b-error { background:rgba(248,81,73,.18); color:var(--up); }
+  .main { padding:16px 20px; overflow:auto; }
+  .chart { width:100%; height:300px; background:var(--panel); border:1px solid var(--border);
+           border-radius:8px; margin-bottom:14px; }
+  .chart.tall { height:340px; }
+  .section-title { font-size:13px; color:var(--muted); margin:6px 2px; letter-spacing:.5px; }
+  .legend-note { color:var(--muted); font-size:11px; margin:0 2px 10px; line-height:1.6; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>散戶情緒籌碼指標 <span style="color:var(--muted);font-weight:400">Retail Sentiment Chips</span></h1>
+  <span class="meta" id="meta">載入中…</span>
+</header>
+<div class="wrap">
+  <div class="sidebar" id="sidebar"></div>
+  <div class="main">
+    <div class="section-title">① 散戶真實淨流（bps）＋ 情緒/定期定額分解 · §9.1</div>
+    <div class="legend-note">淨流正負號來自集保存量錨定（§3）；綠=散戶賣出、紅=散戶買進。虛線段為 provisional（集保未出，暫估）。</div>
+    <div id="c_flow" class="chart tall"></div>
+
+    <div class="section-title">② 主力散戶背離 DivergenceScore · §9.3</div>
+    <div class="legend-note">z_inst − z_retail。 ≫0：法人買/散戶賣（偏多背離）；≪0：法人賣/散戶買（偏空背離）。</div>
+    <div id="c_div" class="chart"></div>
+
+    <div class="section-title">③ 大戶剪刀差（週頻存量）· §9.2</div>
+    <div class="legend-note">hb − sr 與 ScissorMomentum。Momentum&gt;0 籌碼向大戶集中；&lt;0 散戶化。</div>
+    <div id="c_scissor" class="chart"></div>
+
+    <div class="section-title">④ 雙頻驗證訊號 · §10</div>
+    <div class="legend-note">CONFIRMED 流量×存量同向確認；NOISE 存量未動（湊張過水）；PENDING 衝突待下份集保；PROVISIONAL 當週未結算。</div>
+    <div id="c_signal" class="chart"></div>
+  </div>
+</div>
+
+<script>
+const DATA = "data";
+const UP = "#f85149", DOWN = "#3fb950", ACCENT = "#58a6ff", WARN = "#d29922", MUTED = "#8b949e";
+let charts = {};
+
+function axisDark(extra={}) {
+  return Object.assign({
+    backgroundColor:"transparent",
+    textStyle:{ color:"#e6edf3" },
+    grid:{ left:50, right:24, top:30, bottom:30 },
+    tooltip:{ trigger:"axis", backgroundColor:"#161b22", borderColor:"#30363d",
+              textStyle:{color:"#e6edf3"} },
+  }, extra);
+}
+
+async function loadIndex() {
+  const idx = await fetch(`${DATA}/index.json`).then(r=>r.json());
+  document.getElementById("meta").textContent =
+    `資料來源：${idx.backend} · 產生時間：${new Date(idx.generated_at).toLocaleString()} · ${idx.stocks.length} 檔`;
+  const sb = document.getElementById("sidebar");
+  sb.innerHTML = "";
+  idx.stocks.forEach((s, i) => {
+    const card = document.createElement("div");
+    card.className = "card" + (i===0 ? " active":"");
+    const sig = s.latest_signal || (s.error ? "error" : "—");
+    card.innerHTML = `
+      <div class="id">${s.stock_id}</div>
+      <div class="row">
+        <span class="badge b-${sig}">${s.latest_label || sig}</span>
+        <span style="color:${(s.latest_retail_net_flow_bps||0)>=0?UP:DOWN};font-size:12px">
+          ${s.latest_retail_net_flow_bps==null?"":(s.latest_retail_net_flow_bps.toFixed(1)+" bps")}</span>
+      </div>`;
+    card.onclick = () => {
+      document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));
+      card.classList.add("active");
+      if (!s.error) loadStock(s.stock_id);
+    };
+    sb.appendChild(card);
+  });
+  if (idx.stocks[0] && !idx.stocks[0].error) loadStock(idx.stocks[0].stock_id);
+}
+
+async function loadStock(id) {
+  const [daily, weekly, signals] = await Promise.all([
+    fetch(`${DATA}/daily/${id}.json`).then(r=>r.json()),
+    fetch(`${DATA}/weekly/${id}.json`).then(r=>r.json()),
+    fetch(`${DATA}/signals/${id}.json`).then(r=>r.json()),
+  ]);
+  renderFlow(daily); renderDiv(daily); renderScissor(weekly); renderSignal(signals);
+}
+
+function get(id){ if(!charts[id]) charts[id]=echarts.init(document.getElementById(id),"dark"); return charts[id]; }
+
+function renderFlow(d) {
+  const x = d.daily.map(r=>r.date);
+  const bps = d.daily.map(r=>r.retail_net_flow_bps);
+  const dca = d.daily.map(r=>r.dca_baseline);
+  get("c_flow").setOption(axisDark({
+    legend:{ data:["散戶淨流 bps","定期定額 baseline(股)"], textStyle:{color:MUTED}, top:4 },
+    xAxis:{ type:"category", data:x, axisLine:{lineStyle:{color:"#30363d"}} },
+    yAxis:[{ name:"bps", axisLine:{lineStyle:{color:"#30363d"}}, splitLine:{lineStyle:{color:"#21262d"}} },
+           { name:"股", position:"right", splitLine:{show:false} }],
+    dataZoom:[{type:"inside"},{type:"slider",height:16,bottom:6}],
+    series:[
+      { name:"散戶淨流 bps", type:"bar", data:bps,
+        itemStyle:{ color:p=> p.value>=0?UP:DOWN } },
+      { name:"定期定額 baseline(股)", type:"line", yAxisIndex:1, data:dca,
+        smooth:true, symbol:"none", lineStyle:{color:WARN,width:1.5} },
+    ],
+  }), true);
+}
+
+function renderDiv(d) {
+  const x = d.daily.map(r=>r.date);
+  get("c_div").setOption(axisDark({
+    xAxis:{ type:"category", data:x, axisLine:{lineStyle:{color:"#30363d"}} },
+    yAxis:{ axisLine:{lineStyle:{color:"#30363d"}}, splitLine:{lineStyle:{color:"#21262d"}} },
+    dataZoom:[{type:"inside"},{type:"slider",height:16,bottom:6}],
+    series:[{ name:"DivergenceScore", type:"line", data:d.daily.map(r=>r.divergence_score),
+              smooth:true, symbol:"none", lineStyle:{color:ACCENT,width:1.6},
+              areaStyle:{ color:"rgba(88,166,255,.10)" },
+              markLine:{ silent:true, symbol:"none", data:[{yAxis:0}],
+                         lineStyle:{color:MUTED,type:"dashed"} } }],
+  }), true);
+}
+
+function renderScissor(w) {
+  const x = w.weekly.map(r=>r.snapshot_date);
+  get("c_scissor").setOption(axisDark({
+    legend:{ data:["ScissorLevel (hb-sr)","ScissorMomentum"], textStyle:{color:MUTED}, top:4 },
+    xAxis:{ type:"category", data:x, axisLine:{lineStyle:{color:"#30363d"}} },
+    yAxis:[{ name:"level", axisLine:{lineStyle:{color:"#30363d"}}, splitLine:{lineStyle:{color:"#21262d"}} },
+           { name:"momentum", position:"right", splitLine:{show:false} }],
+    dataZoom:[{type:"inside"},{type:"slider",height:16,bottom:6}],
+    series:[
+      { name:"ScissorLevel (hb-sr)", type:"line", data:w.weekly.map(r=>r.scissor_level),
+        smooth:true, symbol:"none", lineStyle:{color:ACCENT,width:1.6} },
+      { name:"ScissorMomentum", type:"bar", yAxisIndex:1, data:w.weekly.map(r=>r.scissor_momentum),
+        itemStyle:{ color:p=> p.value>=0?UP:DOWN } },
+    ],
+  }), true);
+}
+
+const SIGCOLOR = { CONFIRMED:DOWN, NOISE:MUTED, PENDING:WARN, PROVISIONAL:ACCENT };
+function renderSignal(s) {
+  const x = s.signals.map(r=>r.date);
+  get("c_signal").setOption(axisDark({
+    tooltip:{ trigger:"axis", backgroundColor:"#161b22", borderColor:"#30363d",
+      textStyle:{color:"#e6edf3"},
+      formatter:p=>{ const r=s.signals[p[0].dataIndex];
+        return `${r.date}<br/><b>${r.signal}</b> · ${r.label}<br/>strength ${r.strength??"—"}<br/>${r.matrix_cell}`; } },
+    xAxis:{ type:"category", data:x, axisLine:{lineStyle:{color:"#30363d"}} },
+    yAxis:{ name:"strength", axisLine:{lineStyle:{color:"#30363d"}}, splitLine:{lineStyle:{color:"#21262d"}} },
+    dataZoom:[{type:"inside"},{type:"slider",height:16,bottom:6}],
+    series:[{ type:"bar", data:s.signals.map(r=>({ value:r.strength||0,
+        itemStyle:{ color:SIGCOLOR[r.signal]||MUTED } })) }],
+  }), true);
+}
+
+window.addEventListener("resize", ()=> Object.values(charts).forEach(c=>c.resize()));
+loadIndex().catch(e=>{ document.getElementById("meta").textContent="載入失敗："+e; });
+</script>
+</body>
+</html>

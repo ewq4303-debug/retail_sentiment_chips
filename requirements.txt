@@ -1,0 +1,5 @@
+# Retail Sentiment Chips — pipeline dependencies
+pandas>=2.0
+numpy>=1.24
+requests>=2.31
+PyYAML>=6.0
