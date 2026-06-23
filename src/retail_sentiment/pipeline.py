@@ -58,6 +58,16 @@ def run(out_dir: Path, cfg: Config | None = None, universe: list[str] | None = N
             summaries.append({"stock_id": stock_id, "error": str(e)})
 
     output.write_index(out_dir, summaries, used_backend)
+
+    # 整體市場散戶指標（由集保全市場 aggregate；無 cache 則略過）
+    try:
+        from . import market
+
+        if market.build_json(cfg.root, out_dir):
+            print("[market] wrote market.json")
+    except Exception as e:  # noqa: BLE001
+        print(f"[market] build skipped: {type(e).__name__}: {e}")
+
     return {"backend": used_backend, "count": len(summaries)}
 
 

@@ -42,6 +42,13 @@ def backfill_universe(root: Path, universe: list[str]) -> None:
     if df.empty:
         print("[tdcc] opendata returned no rows")
         return
+    # 全市場 aggregate（市場散戶指標）→ 在過濾 universe 前用完整 df。
+    try:
+        from . import market
+
+        market.update_cache(root, df)
+    except Exception as e:  # noqa: BLE001
+        print(f"[market] update skipped: {type(e).__name__}: {e}")
     uni = set(universe)
     for stock_id, g in df[df["stock_id"].isin(uni)].groupby("stock_id"):
         _upsert_cache(root, stock_id, g)

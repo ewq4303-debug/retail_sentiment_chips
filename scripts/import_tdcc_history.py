@@ -27,7 +27,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from retail_sentiment import tdcc  # noqa: E402
+from retail_sentiment import market, tdcc  # noqa: E402
 from retail_sentiment.config import load_universe  # noqa: E402
 
 API = "https://api.github.com/repos/{owner}/{repo}/contents/{path}"
@@ -70,6 +70,7 @@ def main() -> int:
         if norm.empty:
             print(f"[skip] {name}: 無法解析")
             continue
+        market.update_cache(ROOT, norm)  # 全市場 aggregate（過濾前）
         if universe is not None:
             norm = norm[norm["stock_id"].isin(universe)]
         for sid, g in norm.groupby("stock_id"):

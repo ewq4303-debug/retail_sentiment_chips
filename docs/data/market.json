@@ -1,0 +1,75 @@
+{
+  "weekly": [
+    {
+      "snapshot_date": "2026-04-30",
+      "sr_pct": 9.8752,
+      "hb_pct": 51.4731,
+      "scissor_level": 41.5979,
+      "scissor_momentum": null,
+      "n_stocks": 2926
+    },
+    {
+      "snapshot_date": "2026-05-08",
+      "sr_pct": 9.8884,
+      "hb_pct": 51.484,
+      "scissor_level": 41.5956,
+      "scissor_momentum": -0.0023,
+      "n_stocks": 2928
+    },
+    {
+      "snapshot_date": "2026-05-15",
+      "sr_pct": 9.9148,
+      "hb_pct": 51.486,
+      "scissor_level": 41.5712,
+      "scissor_momentum": -0.0244,
+      "n_stocks": 2930
+    },
+    {
+      "snapshot_date": "2026-05-22",
+      "sr_pct": 9.9017,
+      "hb_pct": 51.5417,
+      "scissor_level": 41.64,
+      "scissor_momentum": 0.0689,
+      "n_stocks": 2933
+    },
+    {
+      "snapshot_date": "2026-05-29",
+      "sr_pct": 9.9169,
+      "hb_pct": 51.5809,
+      "scissor_level": 41.664,
+      "scissor_momentum": 0.024,
+      "n_stocks": 2934
+    },
+    {
+      "snapshot_date": "2026-06-05",
+      "sr_pct": 9.991,
+      "hb_pct": 51.5518,
+      "scissor_level": 41.5608,
+      "scissor_momentum": -0.1032,
+      "n_stocks": 2934
+    },
+    {
+      "snapshot_date": "2026-06-12",
+      "sr_pct": 10.0295,
+      "hb_pct": 51.5007,
+      "scissor_level": 41.4712,
+      "scissor_momentum": -0.0896,
+      "n_stocks": 2938
+    },
+    {
+      "snapshot_date": "2026-06-18",
+      "sr_pct": 10.0314,
+      "hb_pct": 51.5132,
+      "scissor_level": 41.4818,
+      "scissor_momentum": 0.0105,
+      "n_stocks": 2939
+    }
+  ],
+  "latest": {
+    "snapshot_date": "2026-06-18",
+    "sr_pct": 10.0314,
+    "hb_pct": 51.5132,
+    "scissor_momentum": 0.0105,
+    "tilt": "大戶集中"
+  }
+}
