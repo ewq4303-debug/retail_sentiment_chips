@@ -25,22 +25,48 @@ _HEADERS = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
 
 # ───────────────────────────── HTTP 抓取 ────────────────────────────────────
 
-def _report_url(cfg, report: str, day: date) -> str:
-    base = (cfg.twse or {}).get("base_url", "https://www.twse.com.tw/exchangeReport")
-    return f"{base.rstrip('/')}/{report}?response=json&date={day.strftime('%Y%m%d')}"
+def _templates(cfg) -> list[str]:
+    twse = cfg.twse or {}
+    tpls = twse.get("url_templates")
+    if tpls:
+        return list(tpls)
+    base = twse.get("base_url", "https://www.twse.com.tw/exchangeReport")
+    return [f"{base.rstrip('/')}/{{report}}?response=json&date={{ymd}}"]
 
 
-def fetch_report_for_date(cfg, report: str, day: date) -> dict[str, dict]:
-    """抓單一報表單日（全市場），回傳 {stock_id: {volume, value, avg_price}}。
+def _format_url(template: str, report: str, day: date) -> str:
+    return template.format(report=report, ymd=day.strftime("%Y%m%d"))
 
-    假日/無資料回傳 {}（stat != OK 或無 data）。網路錯誤則 raise（呼叫端決定是否標記）。
-    """
-    if not report:
-        return {}
-    r = requests.get(_report_url(cfg, report, day), headers=_HEADERS, timeout=30)
+
+def _fetch_json(url: str):
+    """回傳解析後的 JSON（dict），非 JSON / HTML / 空 body 回 None。"""
+    r = requests.get(url, headers=_HEADERS, timeout=30)
     r.raise_for_status()
-    payload = r.json()
-    return _parse_report(payload)
+    try:
+        payload = r.json()
+    except ValueError:
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
+def probe_template(cfg, report: str, probe_day: date) -> str | None:
+    """探測哪個 URL 模板能回合法 TWSE JSON（含 stat/fields/tables 任一）。回 None 表示全失敗。"""
+    for tpl in _templates(cfg):
+        try:
+            payload = _fetch_json(_format_url(tpl, report, probe_day))
+        except Exception:  # noqa: BLE001
+            payload = None
+        if isinstance(payload, dict) and any(k in payload for k in ("stat", "fields", "tables", "data")):
+            return tpl
+    return None
+
+
+def fetch_report_for_date(cfg, report: str, day: date, template: str) -> dict[str, dict]:
+    """以選定模板抓單一報表單日（全市場），回傳 {stock_id: {volume, value, avg_price}}。"""
+    if not report or not template:
+        return {}
+    payload = _fetch_json(_format_url(template, report, day))
+    return _parse_report(payload) if payload else {}
 
 
 def _parse_report(payload: dict) -> dict[str, dict]:
@@ -97,18 +123,28 @@ def backfill_universe(root: Path, cfg, universe: list[str], trading_days: list[d
             continue
         markers = _load_markers(root, report)
         todo = [d for d in days_desc if d.isoformat() not in markers][:cap]
+        if not todo:
+            continue
+        # 先探測可用的 URL 模板（只試一個日期），失敗就整個跳過、不洗版。
+        template = probe_template(cfg, report, todo[0])
+        if template is None:
+            print(f"[twse] {report}: no working endpoint (tried {len(_templates(cfg))} templates) "
+                  f"→ skip, odd-lot will use proxy. 請於 config 校正 TWSE.url_templates")
+            continue
+        ok = 0
         for d in todo:
             try:
-                m = fetch_report_for_date(cfg, report, d)
-            except Exception as e:  # noqa: BLE001 — 網路錯誤：不標記，留待下次重試
-                print(f"[twse] {report} {d} fetch failed: {type(e).__name__}: {e}")
+                m = fetch_report_for_date(cfg, report, d, template)
+            except Exception:  # noqa: BLE001 — 單日網路錯誤：不標記，留待下次重試
                 continue
             for s in universe:
                 rec = m.get(s)
                 if rec:
                     pending[s].setdefault(d, {})[part] = rec
             markers.add(d.isoformat())  # 有回應即標記（假日空資料也算抓過）
+            ok += 1
             time.sleep(delay)
+        print(f"[twse] {report}: fetched {ok}/{len(todo)} days via {template.split('//')[1].split('/')[0]}")
         _save_markers(root, report, markers)
 
     for s in universe:

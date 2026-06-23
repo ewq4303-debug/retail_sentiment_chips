@@ -31,7 +31,10 @@ ETF_DCA_INTENSITY: 1.0               # ETF 給較高 dca_intensity（§4）
 # 故可一次回補整個視窗、再以 cache/markers 避免重抓。盤後零股權重 1.0（§1 表 A）。
 # 端點格式：{base_url}/{REPORT}?response=json&date=YYYYMMDD
 TWSE:
-  base_url: "https://www.twse.com.tw/exchangeReport"
+  # 多個候選 URL 模板（{report}/{ymd} 會被替換）；backfill 先探測第一個能回 JSON 的。
+  url_templates:
+    - "https://www.twse.com.tw/rwd/zh/afterTrading/{report}?date={ymd}&response=json"
+    - "https://www.twse.com.tw/exchangeReport/{report}?response=json&date={ymd}"
   oddlot_intra_report: "TWTC7U"      # 盤中零股交易行情單（歷史可查）
   oddlot_after_report: "TWT53U"      # 盤後零股交易行情單（歷史可查）
   oddlot_backfill_max_days_per_run: 120   # 每次執行最多回補幾個交易日（禮貌限流）

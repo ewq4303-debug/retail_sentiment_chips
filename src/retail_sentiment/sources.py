@@ -69,6 +69,11 @@ def _select_backend() -> str:
 # ───────────────────────────── FinMind backend ──────────────────────────────
 
 def _finmind_get(dataset: str, data_id: str, start: date, end: date, token: str | None) -> pd.DataFrame:
+    """抓 FinMind 單一 dataset。任何錯誤皆「非致命」：記錄 FinMind 訊息後回空 DataFrame。
+
+    這樣某個 dataset 無權限/額度（常見：集保為贊助會員專屬 → HTTP 400/402）時，
+    其餘資料仍可用，該檔走降級路徑（如集保缺 → §3.3 暫定）。
+    """
     params = {
         "dataset": dataset,
         "data_id": data_id,
@@ -80,14 +85,20 @@ def _finmind_get(dataset: str, data_id: str, start: date, end: date, token: str 
     for attempt in range(4):
         try:
             r = requests.get(FINMIND_URL, params=params, timeout=30)
-            if r.status_code == 402:  # 額度用罄
-                raise RuntimeError("FinMind quota exhausted (402)")
-            r.raise_for_status()
-            payload = r.json()
-            return pd.DataFrame(payload.get("data", []))
-        except Exception:
+            if r.status_code == 200:
+                return pd.DataFrame(r.json().get("data", []))
+            # 非 200：讀 FinMind 訊息（多為權限/額度），記錄後回空、不中斷整檔。
+            msg = ""
+            try:
+                msg = str(r.json().get("msg", ""))[:140]
+            except Exception:  # noqa: BLE001
+                msg = r.text[:140]
+            print(f"[finmind] {dataset} {data_id}: HTTP {r.status_code} {msg}")
+            return pd.DataFrame()
+        except requests.RequestException as e:
             if attempt == 3:
-                raise
+                print(f"[finmind] {dataset} {data_id}: {type(e).__name__} (giving up)")
+                return pd.DataFrame()
             time.sleep(2 ** (attempt + 1))
     return pd.DataFrame()
 
@@ -110,8 +121,17 @@ def _fetch_finmind(stock_id: str, start: date, end: date, cfg) -> StockData:
 
     daily = _assemble_finmind_daily(price, inst, margin, daytrade, notes)
     weekly = _assemble_finmind_tdcc(tdcc, notes)
+    if weekly.empty:
+        # FinMind 集保無權限/無資料 → 用 TDCC opendata cache（pipeline 已批次回補）。
+        from . import tdcc as tdcc_mod
 
-    # 零股：抓 TWSE OpenAPI 當日快照、累積 cache，由 cache 組歷史時序（SPEC §1 表 A / §13）。
+        weekly = tdcc_mod.load_cache(cfg.root, stock_id)
+        if not weekly.empty:
+            notes.append(f"TDCC from opendata cache ({weekly['snapshot_date'].nunique()} weeks)")
+        else:
+            notes.append("no TDCC (FinMind + opendata both empty) → provisional only")
+
+    # 零股：由 TWSE cache 組歷史時序（pipeline 已批次回補）（SPEC §1 表 A / §13）。
     _attach_oddlot_twse(daily, stock_id, cfg, notes)
 
     return StockData(stock_id, daily, weekly, _is_etf(stock_id), "finmind", notes)
