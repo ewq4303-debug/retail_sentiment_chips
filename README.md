@@ -55,9 +55,24 @@ python -m http.server -d docs 8000      # 開 http://localhost:8000
 | backend | 說明 |
 |---|---|
 | `synthetic` | 確定性假資料，自洽含可偵測籌碼集中事件；保證 CI 無金鑰也能跑通並產 demo |
-| `finmind` | FinMind v4 抓整股/法人/融資券/集保/當沖；需 `FINMIND_TOKEN` |
+| `finmind` | FinMind v4 抓整股/法人/融資券/當沖；需 `FINMIND_TOKEN`。任何 dataset 失敗皆降級不中斷 |
 
 選擇邏輯：環境變數 `DATA_BACKEND`；未設且無 `FINMIND_TOKEN` → 自動 `synthetic`。
+
+### 集保（股權分散，週頻存量）
+FinMind 的 `TaiwanStockHoldingSharesPer` 為**贊助會員專屬**（免費 token 回 HTTP 400），
+故集保改用 **TDCC 官方 opendata**（`getOD.ashx?id=1-5`，免金鑰），每週累積寫入
+`cache/tdcc/{id}.csv`（隨 repo commit）。FinMind 若有權限（含歷史）則優先。
+
+opendata 只有最新一週，需累積 ≥2 週才有 ΔStock 強弱訊號。已用 importer 從外部累積
+的歷史**一次性 seed**（本 repo `cache/tdcc/` 已含多週），之後 cron 繼續往後累積：
+
+```bash
+# 從公開 repo 目錄匯入每週 CSV（原始 opendata 格式）
+python scripts/import_tdcc_history.py --from-github <owner>/<repo>:<path>
+# 或本機目錄
+python scripts/import_tdcc_history.py --local /path/to/tdcc_history
+```
 
 > **零股資料**（SPEC §1 表 A / §13）：FinMind 無乾淨日頻零股 dataset，改接 **TWSE 歷史行情單**
 > （`src/retail_sentiment/twse.py`）。盤中零股 `TWTC7U`、盤後零股 `TWT53U` 皆支援
