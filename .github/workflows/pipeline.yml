@@ -1,0 +1,76 @@
+name: retail-sentiment-pipeline
+
+# EOD batch（SPEC §0：無本地常駐 process，全部日頻/週頻 batch）。
+# 台股收盤後（含盤後零股 14:30、T86、TDCC 週五收盤後）約晚間出齊。
+# cron 為 UTC：01:10 UTC ≈ 台北 09:10（隔日），抓前一交易日 EOD 彙總。
+on:
+  schedule:
+    - cron: "10 1 * * 2-6"   # 週二~週六 UTC（對應台北 週二~週六 早上，涵蓋週一~週五收盤）
+  workflow_dispatch:
+    inputs:
+      backend:
+        description: "data backend (finmind|synthetic)"
+        required: false
+        default: "finmind"
+
+permissions:
+  contents: write    # commit JSON 回 repo
+  pages: write       # 部署 GitHub Pages
+  id-token: write
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pip install pytest && python -m pytest -q
+
+      - name: Run pipeline
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+          # 無 token 時 backend 自動降級為 synthetic（CI 仍可產出 demo）。
+          DATA_BACKEND: ${{ github.event.inputs.backend || '' }}
+        run: python run.py
+
+      - name: Commit data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data cache
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "data: EOD update $(date -u +%Y-%m-%d)"
+            for i in 1 2 3 4; do
+              git push && break || sleep $((2**i))
+            done
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
