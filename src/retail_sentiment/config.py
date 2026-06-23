@@ -32,6 +32,7 @@ class Config:
     matrix_w_retail: float = 0.5
     lookback_trading_days: int = 180
     etf_dca_intensity: float = 1.0
+    twse: dict[str, Any] = field(default_factory=dict)
 
     # 衍生路徑
     root: Path = ROOT

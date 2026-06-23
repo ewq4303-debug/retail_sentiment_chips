@@ -59,8 +59,12 @@ python -m http.server -d docs 8000      # 開 http://localhost:8000
 
 選擇邏輯：環境變數 `DATA_BACKEND`；未設且無 `FINMIND_TOKEN` → 自動 `synthetic`。
 
-> **零股資料**（SPEC §13 open item）：FinMind 無乾淨日頻零股 dataset，目前以整股量比例
-> 合成零股代理並標旗標。真實盤中/盤後零股需接 TWSE OpenAPI，列 Phase 2。
+> **零股資料**（SPEC §1 表 A / §13）：FinMind 無乾淨日頻零股 dataset，改接 **TWSE OpenAPI**
+> （`src/retail_sentiment/twse.py`）。TWSE OpenAPI 只回**最新一個交易日**快照、無歷史，故
+> 每次執行抓當日、**累積寫入 `cache/oddlot/{id}.csv`**（隨 repo commit），由 cache 組歷史時序；
+> cache 未涵蓋的舊日以整股量比例合成代理並標 `oddlot_is_proxy`。盤後零股(`TWT53U`)為主、權重 1.0。
+> 欄位採防禦式偵測（中/英文 key 模糊比對）。
+> ⚠️ 盤中零股 OpenAPI 代碼仍待 live 驗證（`config.yaml` 的 `TWSE.oddlot_intra_endpoint`，預設留空＝略過盤中）。
 
 ## GitHub Actions 部署
 

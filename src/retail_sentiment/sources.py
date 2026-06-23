@@ -111,12 +111,46 @@ def _fetch_finmind(stock_id: str, start: date, end: date, cfg) -> StockData:
     daily = _assemble_finmind_daily(price, inst, margin, daytrade, notes)
     weekly = _assemble_finmind_tdcc(tdcc, notes)
 
-    # 零股：FinMind 無乾淨日頻零股 dataset（SPEC §13 open item）。
-    # 以整股量之穩定比例合成零股代理，並標旗標；真實零股需 TWSE OpenAPI Phase 2。
-    _attach_oddlot_proxy(daily)
-    notes.append("odd-lot is synthetic proxy of whole volume (SPEC §13)")
+    # 零股：抓 TWSE OpenAPI 當日快照、累積 cache，由 cache 組歷史時序（SPEC §1 表 A / §13）。
+    _attach_oddlot_twse(daily, stock_id, cfg, notes)
 
     return StockData(stock_id, daily, weekly, _is_etf(stock_id), "finmind", notes)
+
+
+def _attach_oddlot_twse(daily: pd.DataFrame, stock_id: str, cfg, notes) -> None:
+    """以 TWSE OpenAPI cache 填零股欄位；cache 未涵蓋日以整股量比例代理並標旗標。
+
+    TWSE OpenAPI 只回最新交易日 → cache 隨每日執行累積（SPEC §1 表 A 註）。
+    """
+    from . import twse
+
+    cache = twse.update_and_load(cfg.root, cfg, stock_id)
+    for col in ("v_intra", "vwap_intra", "v_after", "vwap_after"):
+        daily[col] = (cache[col].reindex(daily.index) if (not cache.empty and col in cache)
+                      else np.nan)
+    daily["oddlot_is_proxy"] = daily["v_after"].isna() & daily["v_intra"].isna()
+
+    proxy_on = (cfg.twse or {}).get("oddlot_proxy_fallback", True)
+    n_real = int((~daily["oddlot_is_proxy"]).sum())
+    if proxy_on and daily["oddlot_is_proxy"].any():
+        _fill_oddlot_proxy_where_missing(daily)
+        notes.append(f"odd-lot: {n_real} days from TWSE cache, rest synthetic proxy (SPEC §13)")
+    else:
+        notes.append(f"odd-lot: {n_real} days from TWSE cache (no proxy fill)")
+
+
+def _fill_oddlot_proxy_where_missing(daily: pd.DataFrame) -> None:
+    """僅對缺值日以整股量比例補零股代理，保留 TWSE 真值。"""
+    rng = np.random.default_rng(7)
+    v = daily["v_whole"].to_numpy()
+    n = len(v)
+    intra = np.clip(v * 0.02 * (1 + rng.normal(0, 0.3, n)), 0, None)
+    after = np.clip(v * 0.015 * (1 + rng.normal(0, 0.2, n)), 0, None)
+    miss = daily["oddlot_is_proxy"].to_numpy()
+    daily.loc[miss, "v_intra"] = intra[miss]
+    daily.loc[miss, "v_after"] = after[miss]
+    daily.loc[miss, "vwap_intra"] = daily["vwap_whole"][miss]
+    daily.loc[miss, "vwap_after"] = daily["vwap_whole"][miss]
 
 
 def _assemble_finmind_daily(price, inst, margin, daytrade, notes) -> pd.DataFrame:
