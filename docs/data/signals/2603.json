@@ -1400,6 +1400,13 @@
       "label": "暫定（集保未出）",
       "strength": 0.018,
       "matrix_cell": "provisional"
+    },
+    {
+      "date": "2026-06-23",
+      "signal": "PROVISIONAL",
+      "label": "暫定（集保未出）",
+      "strength": 0.0609,
+      "matrix_cell": "provisional"
     }
   ]
 }
