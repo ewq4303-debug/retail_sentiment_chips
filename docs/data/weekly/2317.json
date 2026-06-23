@@ -2,554 +2,14 @@
   "stock_id": "2317",
   "weekly": [
     {
-      "snapshot_date": "2025-08-22",
-      "cutoff": "2025-08-21",
+      "snapshot_date": "2026-04-30",
+      "cutoff": "2026-04-29",
       "window": null,
-      "sr_pct": 30.7505,
-      "hb_pct": 54.2495,
-      "scissor_level": 23.4989,
+      "sr_pct": 9.255,
+      "hb_pct": 67.6176,
+      "scissor_level": 58.3626,
       "scissor_momentum": null,
       "delta_retail_shares_adj": null,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-08-29",
-      "cutoff": "2025-08-28",
-      "window": [
-        "2025-08-22",
-        "2025-08-28"
-      ],
-      "sr_pct": 30.9821,
-      "hb_pct": 54.0179,
-      "scissor_level": 23.0358,
-      "scissor_momentum": -0.4631,
-      "delta_retail_shares_adj": 4631475.8857,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-09-05",
-      "cutoff": "2025-09-04",
-      "window": [
-        "2025-08-29",
-        "2025-09-04"
-      ],
-      "sr_pct": 31.6543,
-      "hb_pct": 53.3457,
-      "scissor_level": 21.6913,
-      "scissor_momentum": -1.3445,
-      "delta_retail_shares_adj": 13444836.8587,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-09-12",
-      "cutoff": "2025-09-11",
-      "window": [
-        "2025-09-05",
-        "2025-09-11"
-      ],
-      "sr_pct": 31.7718,
-      "hb_pct": 53.2282,
-      "scissor_level": 21.4564,
-      "scissor_momentum": -0.2349,
-      "delta_retail_shares_adj": 2349372.6791,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-09-19",
-      "cutoff": "2025-09-18",
-      "window": [
-        "2025-09-12",
-        "2025-09-18"
-      ],
-      "sr_pct": 31.1646,
-      "hb_pct": 53.8354,
-      "scissor_level": 22.6708,
-      "scissor_momentum": 1.2145,
-      "delta_retail_shares_adj": -12144781.3725,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-09-26",
-      "cutoff": "2025-09-25",
-      "window": [
-        "2025-09-19",
-        "2025-09-25"
-      ],
-      "sr_pct": 30.755,
-      "hb_pct": 54.245,
-      "scissor_level": 23.49,
-      "scissor_momentum": 0.8192,
-      "delta_retail_shares_adj": -8191627.4994,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-10-03",
-      "cutoff": "2025-10-02",
-      "window": [
-        "2025-09-26",
-        "2025-10-02"
-      ],
-      "sr_pct": 30.8225,
-      "hb_pct": 54.1775,
-      "scissor_level": 23.355,
-      "scissor_momentum": -0.135,
-      "delta_retail_shares_adj": 1350292.9829,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-10-10",
-      "cutoff": "2025-10-09",
-      "window": [
-        "2025-10-03",
-        "2025-10-09"
-      ],
-      "sr_pct": 30.7327,
-      "hb_pct": 54.2673,
-      "scissor_level": 23.5346,
-      "scissor_momentum": 0.1796,
-      "delta_retail_shares_adj": -1795795.5438,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-10-17",
-      "cutoff": "2025-10-16",
-      "window": [
-        "2025-10-10",
-        "2025-10-16"
-      ],
-      "sr_pct": 30.9717,
-      "hb_pct": 54.0283,
-      "scissor_level": 23.0567,
-      "scissor_momentum": -0.4779,
-      "delta_retail_shares_adj": 4778996.4995,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-10-24",
-      "cutoff": "2025-10-23",
-      "window": [
-        "2025-10-17",
-        "2025-10-23"
-      ],
-      "sr_pct": 30.7666,
-      "hb_pct": 54.2334,
-      "scissor_level": 23.4667,
-      "scissor_momentum": 0.4101,
-      "delta_retail_shares_adj": -4100763.5403,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-10-31",
-      "cutoff": "2025-10-30",
-      "window": [
-        "2025-10-24",
-        "2025-10-30"
-      ],
-      "sr_pct": 30.6807,
-      "hb_pct": 54.3193,
-      "scissor_level": 23.6386,
-      "scissor_momentum": 0.1719,
-      "delta_retail_shares_adj": -1718597.6557,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-11-07",
-      "cutoff": "2025-11-06",
-      "window": [
-        "2025-10-31",
-        "2025-11-06"
-      ],
-      "sr_pct": 30.8351,
-      "hb_pct": 54.1649,
-      "scissor_level": 23.3298,
-      "scissor_momentum": -0.3088,
-      "delta_retail_shares_adj": 3087506.578,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-11-14",
-      "cutoff": "2025-11-13",
-      "window": [
-        "2025-11-07",
-        "2025-11-13"
-      ],
-      "sr_pct": 31.1196,
-      "hb_pct": 53.8804,
-      "scissor_level": 22.7609,
-      "scissor_momentum": -0.5689,
-      "delta_retail_shares_adj": 5689495.4114,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-11-21",
-      "cutoff": "2025-11-20",
-      "window": [
-        "2025-11-14",
-        "2025-11-20"
-      ],
-      "sr_pct": 30.7772,
-      "hb_pct": 54.2228,
-      "scissor_level": 23.4456,
-      "scissor_momentum": 0.6847,
-      "delta_retail_shares_adj": -6847465.8557,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-11-28",
-      "cutoff": "2025-11-27",
-      "window": [
-        "2025-11-21",
-        "2025-11-27"
-      ],
-      "sr_pct": 30.6502,
-      "hb_pct": 54.3498,
-      "scissor_level": 23.6996,
-      "scissor_momentum": 0.254,
-      "delta_retail_shares_adj": -2539947.2796,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-12-05",
-      "cutoff": "2025-12-04",
-      "window": [
-        "2025-11-28",
-        "2025-12-04"
-      ],
-      "sr_pct": 31.9238,
-      "hb_pct": 53.0762,
-      "scissor_level": 21.1525,
-      "scissor_momentum": -2.5471,
-      "delta_retail_shares_adj": 25471420.9227,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-12-12",
-      "cutoff": "2025-12-11",
-      "window": [
-        "2025-12-05",
-        "2025-12-11"
-      ],
-      "sr_pct": 32.2248,
-      "hb_pct": 52.7752,
-      "scissor_level": 20.5504,
-      "scissor_momentum": -0.6021,
-      "delta_retail_shares_adj": 6021210.0665,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-12-19",
-      "cutoff": "2025-12-18",
-      "window": [
-        "2025-12-12",
-        "2025-12-18"
-      ],
-      "sr_pct": 32.8593,
-      "hb_pct": 52.1407,
-      "scissor_level": 19.2814,
-      "scissor_momentum": -1.269,
-      "delta_retail_shares_adj": 12689670.1595,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2025-12-26",
-      "cutoff": "2025-12-25",
-      "window": [
-        "2025-12-19",
-        "2025-12-25"
-      ],
-      "sr_pct": 32.5497,
-      "hb_pct": 52.4503,
-      "scissor_level": 19.9005,
-      "scissor_momentum": 0.6191,
-      "delta_retail_shares_adj": -6191350.6465,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-01-02",
-      "cutoff": "2026-01-01",
-      "window": [
-        "2025-12-26",
-        "2026-01-01"
-      ],
-      "sr_pct": 32.3239,
-      "hb_pct": 52.6761,
-      "scissor_level": 20.3522,
-      "scissor_momentum": 0.4516,
-      "delta_retail_shares_adj": -4516170.7371,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-01-09",
-      "cutoff": "2026-01-08",
-      "window": [
-        "2026-01-02",
-        "2026-01-08"
-      ],
-      "sr_pct": 32.2815,
-      "hb_pct": 52.7185,
-      "scissor_level": 20.4371,
-      "scissor_momentum": 0.0849,
-      "delta_retail_shares_adj": -848935.5289,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-01-16",
-      "cutoff": "2026-01-15",
-      "window": [
-        "2026-01-09",
-        "2026-01-15"
-      ],
-      "sr_pct": 31.5621,
-      "hb_pct": 53.4379,
-      "scissor_level": 21.8758,
-      "scissor_momentum": 1.4388,
-      "delta_retail_shares_adj": -14387976.9268,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-01-23",
-      "cutoff": "2026-01-22",
-      "window": [
-        "2026-01-16",
-        "2026-01-22"
-      ],
-      "sr_pct": 31.0038,
-      "hb_pct": 53.9962,
-      "scissor_level": 22.9925,
-      "scissor_momentum": 1.1166,
-      "delta_retail_shares_adj": -11166451.1777,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-01-30",
-      "cutoff": "2026-01-29",
-      "window": [
-        "2026-01-23",
-        "2026-01-29"
-      ],
-      "sr_pct": 30.9013,
-      "hb_pct": 54.0987,
-      "scissor_level": 23.1975,
-      "scissor_momentum": 0.205,
-      "delta_retail_shares_adj": -2049996.2813,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-02-06",
-      "cutoff": "2026-02-05",
-      "window": [
-        "2026-01-30",
-        "2026-02-05"
-      ],
-      "sr_pct": 30.655,
-      "hb_pct": 54.345,
-      "scissor_level": 23.69,
-      "scissor_momentum": 0.4925,
-      "delta_retail_shares_adj": -4925113.6734,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-02-13",
-      "cutoff": "2026-02-12",
-      "window": [
-        "2026-02-06",
-        "2026-02-12"
-      ],
-      "sr_pct": 31.0235,
-      "hb_pct": 53.9765,
-      "scissor_level": 22.9529,
-      "scissor_momentum": -0.7371,
-      "delta_retail_shares_adj": 7370992.7635,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-02-20",
-      "cutoff": "2026-02-19",
-      "window": [
-        "2026-02-13",
-        "2026-02-19"
-      ],
-      "sr_pct": 30.3613,
-      "hb_pct": 54.6387,
-      "scissor_level": 24.2774,
-      "scissor_momentum": 1.3245,
-      "delta_retail_shares_adj": -13245326.1929,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-02-27",
-      "cutoff": "2026-02-26",
-      "window": [
-        "2026-02-20",
-        "2026-02-26"
-      ],
-      "sr_pct": 30.1108,
-      "hb_pct": 54.8892,
-      "scissor_level": 24.7783,
-      "scissor_momentum": 0.5009,
-      "delta_retail_shares_adj": -5008900.2229,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-03-06",
-      "cutoff": "2026-03-05",
-      "window": [
-        "2026-02-27",
-        "2026-03-05"
-      ],
-      "sr_pct": 30.6443,
-      "hb_pct": 54.3557,
-      "scissor_level": 23.7113,
-      "scissor_momentum": -1.067,
-      "delta_retail_shares_adj": 10670085.1543,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-03-13",
-      "cutoff": "2026-03-12",
-      "window": [
-        "2026-03-06",
-        "2026-03-12"
-      ],
-      "sr_pct": 30.7163,
-      "hb_pct": 54.2837,
-      "scissor_level": 23.5675,
-      "scissor_momentum": -0.1438,
-      "delta_retail_shares_adj": 1438339.1745,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-03-20",
-      "cutoff": "2026-03-19",
-      "window": [
-        "2026-03-13",
-        "2026-03-19"
-      ],
-      "sr_pct": 31.1784,
-      "hb_pct": 53.8216,
-      "scissor_level": 22.6433,
-      "scissor_momentum": -0.9242,
-      "delta_retail_shares_adj": 9242237.6977,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-03-27",
-      "cutoff": "2026-03-26",
-      "window": [
-        "2026-03-20",
-        "2026-03-26"
-      ],
-      "sr_pct": 31.7774,
-      "hb_pct": 53.2226,
-      "scissor_level": 21.4452,
-      "scissor_momentum": -1.1981,
-      "delta_retail_shares_adj": 11980884.4473,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-04-03",
-      "cutoff": "2026-04-02",
-      "window": [
-        "2026-03-27",
-        "2026-04-02"
-      ],
-      "sr_pct": 31.0814,
-      "hb_pct": 53.9186,
-      "scissor_level": 22.8373,
-      "scissor_momentum": 1.3921,
-      "delta_retail_shares_adj": -13921134.4284,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-04-10",
-      "cutoff": "2026-04-09",
-      "window": [
-        "2026-04-03",
-        "2026-04-09"
-      ],
-      "sr_pct": 30.3472,
-      "hb_pct": 54.6528,
-      "scissor_level": 24.3055,
-      "scissor_momentum": 1.4682,
-      "delta_retail_shares_adj": -14682244.0069,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-04-17",
-      "cutoff": "2026-04-16",
-      "window": [
-        "2026-04-10",
-        "2026-04-16"
-      ],
-      "sr_pct": 30.2077,
-      "hb_pct": 54.7923,
-      "scissor_level": 24.5846,
-      "scissor_momentum": 0.2791,
-      "delta_retail_shares_adj": -2791159.3494,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-04-24",
-      "cutoff": "2026-04-23",
-      "window": [
-        "2026-04-17",
-        "2026-04-23"
-      ],
-      "sr_pct": 29.8227,
-      "hb_pct": 55.1773,
-      "scissor_level": 25.3545,
-      "scissor_momentum": 0.7699,
-      "delta_retail_shares_adj": -7699049.2098,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-05-01",
-      "cutoff": "2026-04-30",
-      "window": [
-        "2026-04-24",
-        "2026-04-30"
-      ],
-      "sr_pct": 29.8204,
-      "hb_pct": 55.1796,
-      "scissor_level": 25.3591,
-      "scissor_momentum": 0.0046,
-      "delta_retail_shares_adj": -46026.5468,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -557,14 +17,14 @@
       "snapshot_date": "2026-05-08",
       "cutoff": "2026-05-07",
       "window": [
-        "2026-05-01",
+        "2026-04-30",
         "2026-05-07"
       ],
-      "sr_pct": 29.9812,
-      "hb_pct": 55.0188,
-      "scissor_level": 25.0377,
-      "scissor_momentum": -0.3215,
-      "delta_retail_shares_adj": 3214776.3522,
+      "sr_pct": 8.6462,
+      "hb_pct": 69.2502,
+      "scissor_level": 60.604,
+      "scissor_momentum": 2.2415,
+      "delta_retail_shares_adj": -85407749.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -575,11 +35,11 @@
         "2026-05-08",
         "2026-05-14"
       ],
-      "sr_pct": 30.0544,
-      "hb_pct": 54.9456,
-      "scissor_level": 24.8912,
-      "scissor_momentum": -0.1464,
-      "delta_retail_shares_adj": 1464109.2659,
+      "sr_pct": 8.5549,
+      "hb_pct": 69.4168,
+      "scissor_level": 60.8618,
+      "scissor_momentum": 0.2578,
+      "delta_retail_shares_adj": -12804159.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -590,11 +50,11 @@
         "2026-05-15",
         "2026-05-21"
       ],
-      "sr_pct": 29.0892,
-      "hb_pct": 55.9108,
-      "scissor_level": 26.8215,
-      "scissor_momentum": 1.9303,
-      "delta_retail_shares_adj": -19303014.9888,
+      "sr_pct": 8.4238,
+      "hb_pct": 69.7693,
+      "scissor_level": 61.3456,
+      "scissor_momentum": 0.4837,
+      "delta_retail_shares_adj": -18400306.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -605,11 +65,11 @@
         "2026-05-22",
         "2026-05-28"
       ],
-      "sr_pct": 28.876,
-      "hb_pct": 56.124,
-      "scissor_level": 27.248,
-      "scissor_momentum": 0.4265,
-      "delta_retail_shares_adj": -4264527.175,
+      "sr_pct": 8.1614,
+      "hb_pct": 70.4608,
+      "scissor_level": 62.2993,
+      "scissor_momentum": 0.9538,
+      "delta_retail_shares_adj": -36800759.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -620,11 +80,11 @@
         "2026-05-29",
         "2026-06-04"
       ],
-      "sr_pct": 28.4312,
-      "hb_pct": 56.5688,
-      "scissor_level": 28.1375,
-      "scissor_momentum": 0.8895,
-      "delta_retail_shares_adj": -8895336.3403,
+      "sr_pct": 8.237,
+      "hb_pct": 70.9751,
+      "scissor_level": 62.7381,
+      "scissor_momentum": 0.4388,
+      "delta_retail_shares_adj": 10602923.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
@@ -635,41 +95,26 @@
         "2026-06-05",
         "2026-06-11"
       ],
-      "sr_pct": 28.6595,
-      "hb_pct": 56.3405,
-      "scissor_level": 27.681,
-      "scissor_momentum": -0.4565,
-      "delta_retail_shares_adj": 4565497.3174,
+      "sr_pct": 8.4754,
+      "hb_pct": 70.5465,
+      "scissor_level": 62.0711,
+      "scissor_momentum": -0.6671,
+      "delta_retail_shares_adj": 36864170.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     },
     {
-      "snapshot_date": "2026-06-19",
-      "cutoff": "2026-06-18",
+      "snapshot_date": "2026-06-18",
+      "cutoff": "2026-06-17",
       "window": [
         "2026-06-12",
-        "2026-06-18"
+        "2026-06-17"
       ],
-      "sr_pct": 28.1305,
-      "hb_pct": 56.8695,
-      "scissor_level": 28.7389,
-      "scissor_momentum": 1.0579,
-      "delta_retail_shares_adj": -10579250.8917,
-      "reconcile_ok": true,
-      "tdcc_noise_flag": false
-    },
-    {
-      "snapshot_date": "2026-06-23",
-      "cutoff": "2026-06-22",
-      "window": [
-        "2026-06-19",
-        "2026-06-22"
-      ],
-      "sr_pct": 27.4774,
-      "hb_pct": 57.5226,
-      "scissor_level": 30.0452,
-      "scissor_momentum": 1.3063,
-      "delta_retail_shares_adj": -13063217.7231,
+      "sr_pct": 8.5064,
+      "hb_pct": 70.4853,
+      "scissor_level": 61.9789,
+      "scissor_momentum": -0.0922,
+      "delta_retail_shares_adj": 4738727.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
     }
