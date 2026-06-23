@@ -88,14 +88,20 @@ async function loadIndex() {
   idx.stocks.forEach((s, i) => {
     const card = document.createElement("div");
     card.className = "card" + (i===0 ? " active":"");
-    const sig = s.latest_signal || (s.error ? "error" : "—");
+    // 優先顯示「已結算裁定」(CONFIRMED/NOISE)；當週恆 provisional，故另以小字標暫定。
+    const sig = s.settled_signal || s.latest_signal || (s.error ? "error" : "—");
+    const lab = s.settled_label || s.latest_label || sig;
+    const prov = s.latest_signal === "PROVISIONAL" && s.settled_signal
+      ? `<span style="color:${ACCENT};font-size:10px">本週暫定</span>` : "";
     card.innerHTML = `
       <div class="id">${s.stock_id}</div>
       <div class="row">
-        <span class="badge b-${sig}">${s.latest_label || sig}</span>
+        <span class="badge b-${sig}">${lab}</span>
         <span style="color:${(s.latest_retail_net_flow_bps||0)>=0?UP:DOWN};font-size:12px">
           ${s.latest_retail_net_flow_bps==null?"":(s.latest_retail_net_flow_bps.toFixed(1)+" bps")}</span>
-      </div>`;
+      </div>
+      <div class="row">${prov}<span style="color:var(--muted);font-size:10px">
+        ${s.settled_date?("結算 "+s.settled_date):""}</span></div>`;
     card.onclick = () => {
       document.querySelectorAll(".card").forEach(c=>c.classList.remove("active"));
       card.classList.add("active");

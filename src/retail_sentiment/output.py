@@ -90,12 +90,19 @@ def write_stock_json(
 
     latest_sig = sig_rows[-1] if sig_rows else {}
     latest_daily = daily_rows[-1] if daily_rows else {}
+    # 最近一筆「已結算裁定」（CONFIRMED/NOISE）— 當週恆 provisional，故 summary 另給已結算結果。
+    settled = next((r for r in reversed(sig_rows)
+                    if r.get("signal") in ("CONFIRMED", "NOISE")), {})
     return {
         "stock_id": stock_id,
         "as_of": as_of,
         "latest_signal": latest_sig.get("signal"),
         "latest_label": latest_sig.get("label"),
         "latest_strength": latest_sig.get("strength"),
+        "settled_signal": settled.get("signal"),
+        "settled_label": settled.get("label"),
+        "settled_strength": settled.get("strength"),
+        "settled_date": settled.get("date"),
         "latest_retail_net_flow_bps": latest_daily.get("retail_net_flow_bps"),
         "latest_divergence": latest_daily.get("divergence_score"),
     }
