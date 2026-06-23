@@ -26,12 +26,14 @@ MATRIX_W_RETAIL: 0.5                  # w2：散戶情緒（取負）權重
 LOOKBACK_TRADING_DAYS: 180            # 每次回補的交易日視窗
 ETF_DCA_INTENSITY: 1.0               # ETF 給較高 dca_intensity（§4）
 
-# 零股真實資料：TWSE OpenAPI（SPEC §1 表 A / §13）。
-# 重要：TWSE OpenAPI 只回「最新一個交易日」快照、無歷史 → 故每日抓取並累積到 cache。
-# 盤後零股(TWT53U) 為主、權重 1.0、套利雜訊最低（§1 表 A）。
-# ⚠️ 盤中零股 OpenAPI 代碼待 live 驗證；留空則略過盤中（W_arb 退化為 1.0、T=v_after）。
+# 零股真實資料：TWSE 歷史行情單（SPEC §1 表 A / §13）。
+# 盤中零股「twtc7u」、盤後零股「twt53u」皆可帶 date 參數查歷史單日（全市場），
+# 故可一次回補整個視窗、再以 cache/markers 避免重抓。盤後零股權重 1.0（§1 表 A）。
+# 端點格式：{base_url}/{REPORT}?response=json&date=YYYYMMDD
 TWSE:
-  base_url: "https://openapi.twse.com.tw"
-  oddlot_after_endpoint: "/v1/exchangeReport/TWT53U"   # 盤後零股交易行情單
-  oddlot_intra_endpoint: ""                            # ⚠️待確認盤中零股代碼；空=略過
-  oddlot_proxy_fallback: true        # cache 未涵蓋的歷史日 → 以整股量比例合成代理並標旗標
+  base_url: "https://www.twse.com.tw/exchangeReport"
+  oddlot_intra_report: "TWTC7U"      # 盤中零股交易行情單（歷史可查）
+  oddlot_after_report: "TWT53U"      # 盤後零股交易行情單（歷史可查）
+  oddlot_backfill_max_days_per_run: 120   # 每次執行最多回補幾個交易日（禮貌限流）
+  oddlot_request_delay_sec: 0.25     # 每次請求間隔秒數（TWSE 限流）
+  oddlot_proxy_fallback: true        # cache 仍未涵蓋的日 → 整股量比例代理並標旗標

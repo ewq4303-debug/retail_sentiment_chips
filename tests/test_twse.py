@@ -8,21 +8,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from retail_sentiment import twse
 
 
-def test_parser_handles_chinese_keys(monkeypatch):
-    payload = [
-        {"證券代號": "2330", "證券名稱": "台積電", "成交股數": "12,345",
-         "成交金額": "12,345,000", "成交均價": "1000.0", "日期": "113/06/19"},
-        {"Code": "0050", "Name": "ETF", "TradeVolume": "999", "成交均價": "150"},
-    ]
-    monkeypatch.setattr(twse, "_get_json", lambda url: payload)
-    out = twse.fetch_oddlot_snapshot("/x", "https://openapi.twse.com.tw")
+def test_parser_handles_twse_fields_data():
+    # TWSE JSON：{stat, fields, data}，數字帶千分位逗號
+    payload = {
+        "stat": "OK",
+        "date": "20240619",
+        "fields": ["證券代號", "證券名稱", "成交股數", "成交筆數", "成交金額", "成交均價"],
+        "data": [
+            ["2330", "台積電", "12,345", "100", "12,345,000", "1000.0"],
+            ["0050", "元大台灣50", "999", "10", "149,850", "150.0"],
+            ["合計", "", "", "", "", ""],  # 非數字代號應被忽略
+        ],
+    }
+    out = twse._parse_report(payload)
     assert out["2330"]["volume"] == 12345
-    assert out["2330"]["date"] == date(2024, 6, 19)  # 民國 113 → 西元 2024
+    assert out["2330"]["value"] == 12345000
     assert out["0050"]["volume"] == 999
+    assert "合計" not in out
 
 
-def test_empty_endpoint_skips():
-    assert twse.fetch_oddlot_snapshot("", "https://x") == {}
+def test_parser_handles_tables_wrapper():
+    payload = {"tables": [{
+        "fields": ["證券代號", "成交股數", "成交金額"],
+        "data": [["2317", "5,000", "500,000"]],
+    }]}
+    out = twse._parse_report(payload)
+    assert out["2317"]["volume"] == 5000
+
+
+def test_vwap_prefers_value_over_avg():
+    assert twse._vwap({"volume": 100, "value": 250, "avg_price": 9}) == 2.5
+    assert twse._vwap({"volume": float("nan"), "value": float("nan"), "avg_price": 9}) == 9
 
 
 def test_cache_upsert_roundtrip(tmp_path):

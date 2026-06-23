@@ -118,16 +118,15 @@ def _fetch_finmind(stock_id: str, start: date, end: date, cfg) -> StockData:
 
 
 def _attach_oddlot_twse(daily: pd.DataFrame, stock_id: str, cfg, notes) -> None:
-    """以 TWSE OpenAPI cache 填零股欄位；cache 未涵蓋日以整股量比例代理並標旗標。
+    """以 TWSE 零股 cache 填欄位；cache 未涵蓋日以整股量比例代理並標旗標。
 
-    TWSE OpenAPI 只回最新交易日 → cache 隨每日執行累積（SPEC §1 表 A 註）。
+    cache 由 pipeline 的 backfill_universe 批次回補（每交易日只抓一次、服務全標的）。
     """
     from . import twse
 
-    cache = twse.update_and_load(cfg.root, cfg, stock_id)
+    cache = twse.load_for_index(cfg.root, stock_id, daily.index)
     for col in ("v_intra", "vwap_intra", "v_after", "vwap_after"):
-        daily[col] = (cache[col].reindex(daily.index) if (not cache.empty and col in cache)
-                      else np.nan)
+        daily[col] = cache[col] if col in cache else np.nan
     daily["oddlot_is_proxy"] = daily["v_after"].isna() & daily["v_intra"].isna()
 
     proxy_on = (cfg.twse or {}).get("oddlot_proxy_fallback", True)

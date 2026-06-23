@@ -31,6 +31,16 @@ def run(out_dir: Path, cfg: Config | None = None, universe: list[str] | None = N
     used_backend = backend or sources._select_backend()
     restated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
+    # 零股真實資料：批次回補 TWSE 歷史單（每交易日只抓一次、服務全 universe）。
+    if used_backend == "finmind":
+        try:
+            from . import twse
+
+            weekdays = [d for d in pd.bdate_range(start, end).date]
+            twse.backfill_universe(cfg.root, cfg, universe, weekdays)
+        except Exception as e:  # noqa: BLE001 — 回補失敗不阻斷（per-stock 以 proxy 補）
+            print(f"[twse] backfill skipped: {type(e).__name__}: {e}")
+
     for stock_id in universe:
         try:
             summary = _run_one(stock_id, start, end, cfg, actions, out_dir,

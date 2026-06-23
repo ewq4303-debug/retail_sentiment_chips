@@ -59,12 +59,14 @@ python -m http.server -d docs 8000      # 開 http://localhost:8000
 
 選擇邏輯：環境變數 `DATA_BACKEND`；未設且無 `FINMIND_TOKEN` → 自動 `synthetic`。
 
-> **零股資料**（SPEC §1 表 A / §13）：FinMind 無乾淨日頻零股 dataset，改接 **TWSE OpenAPI**
-> （`src/retail_sentiment/twse.py`）。TWSE OpenAPI 只回**最新一個交易日**快照、無歷史，故
-> 每次執行抓當日、**累積寫入 `cache/oddlot/{id}.csv`**（隨 repo commit），由 cache 組歷史時序；
-> cache 未涵蓋的舊日以整股量比例合成代理並標 `oddlot_is_proxy`。盤後零股(`TWT53U`)為主、權重 1.0。
-> 欄位採防禦式偵測（中/英文 key 模糊比對）。
-> ⚠️ 盤中零股 OpenAPI 代碼仍待 live 驗證（`config.yaml` 的 `TWSE.oddlot_intra_endpoint`，預設留空＝略過盤中）。
+> **零股資料**（SPEC §1 表 A / §13）：FinMind 無乾淨日頻零股 dataset，改接 **TWSE 歷史行情單**
+> （`src/retail_sentiment/twse.py`）。盤中零股 `TWTC7U`、盤後零股 `TWT53U` 皆支援
+> **帶 `date` 參數的歷史單日查詢**（回全市場），故 `backfill_universe` 可一次回補整個 lookback
+> 視窗（每交易日只抓一次、服務全 universe），結果累積寫入 **`cache/oddlot/{id}.csv`**（隨 repo
+> commit），並用 `cache/oddlot/_fetched_{REPORT}.json` markers 避免重抓（含假日空資料）。
+> cache 仍未涵蓋的日以整股量比例合成代理並標 `oddlot_is_proxy`。盤後零股權重 1.0（§1 表 A）。
+> 欄位採防禦式偵測（中文 fields 關鍵字比對）。每次回補受 `oddlot_backfill_max_days_per_run`
+> 與 `oddlot_request_delay_sec` 限流；首次跑滿視窗後，之後 cron 只補新交易日。
 
 ## GitHub Actions 部署
 
