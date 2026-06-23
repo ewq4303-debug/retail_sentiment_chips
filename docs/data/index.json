@@ -1,51 +1,26 @@
 {
-  "generated_at": "2026-06-23T03:06:05.606516+00:00",
-  "backend": "synthetic",
+  "generated_at": "2026-06-23T03:23:37.103986+00:00",
+  "backend": "finmind",
   "stocks": [
     {
       "stock_id": "2330",
-      "as_of": "2026-06-23",
-      "latest_signal": "PROVISIONAL",
-      "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.1125,
-      "latest_retail_net_flow_bps": -11.8238,
-      "latest_divergence": 0.2251
+      "error": "400 Client Error: Bad Request for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockHoldingSharesPer&data_id=2330&start_date=2025-08-21&end_date=2026-06-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZXdxNDMwMyIsImVtYWlsIjoiZXdxNDMwM0BnbWFpbC5jb20iLCJ0b2tlbl92ZXJzaW9uIjowfQ.xdmmK6JaXn2V4zg3X-QZ8ylQlWOiuE-vQjEkD3rtjFU"
     },
     {
       "stock_id": "2317",
-      "as_of": "2026-06-23",
-      "latest_signal": "PROVISIONAL",
-      "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.2937,
-      "latest_retail_net_flow_bps": 1.244,
-      "latest_divergence": -0.5874
+      "error": "400 Client Error: Bad Request for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockHoldingSharesPer&data_id=2317&start_date=2025-08-21&end_date=2026-06-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZXdxNDMwMyIsImVtYWlsIjoiZXdxNDMwM0BnbWFpbC5jb20iLCJ0b2tlbl92ZXJzaW9uIjowfQ.xdmmK6JaXn2V4zg3X-QZ8ylQlWOiuE-vQjEkD3rtjFU"
     },
     {
       "stock_id": "2454",
-      "as_of": "2026-06-23",
-      "latest_signal": "PROVISIONAL",
-      "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.3482,
-      "latest_retail_net_flow_bps": 2.2013,
-      "latest_divergence": 0.6965
+      "error": "400 Client Error: Bad Request for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockHoldingSharesPer&data_id=2454&start_date=2025-08-21&end_date=2026-06-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZXdxNDMwMyIsImVtYWlsIjoiZXdxNDMwM0BnbWFpbC5jb20iLCJ0b2tlbl92ZXJzaW9uIjowfQ.xdmmK6JaXn2V4zg3X-QZ8ylQlWOiuE-vQjEkD3rtjFU"
     },
     {
       "stock_id": "0050",
-      "as_of": "2026-06-23",
-      "latest_signal": "PROVISIONAL",
-      "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.9229,
-      "latest_retail_net_flow_bps": -2.2106,
-      "latest_divergence": -1.8459
+      "error": "400 Client Error: Bad Request for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockHoldingSharesPer&data_id=0050&start_date=2025-08-21&end_date=2026-06-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZXdxNDMwMyIsImVtYWlsIjoiZXdxNDMwM0BnbWFpbC5jb20iLCJ0b2tlbl92ZXJzaW9uIjowfQ.xdmmK6JaXn2V4zg3X-QZ8ylQlWOiuE-vQjEkD3rtjFU"
     },
     {
       "stock_id": "2603",
-      "as_of": "2026-06-23",
-      "latest_signal": "PROVISIONAL",
-      "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.3376,
-      "latest_retail_net_flow_bps": -9.1287,
-      "latest_divergence": 0.6753
+      "error": "400 Client Error: Bad Request for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockHoldingSharesPer&data_id=2603&start_date=2025-08-21&end_date=2026-06-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZXdxNDMwMyIsImVtYWlsIjoiZXdxNDMwM0BnbWFpbC5jb20iLCJ0b2tlbl92ZXJzaW9uIjowfQ.xdmmK6JaXn2V4zg3X-QZ8ylQlWOiuE-vQjEkD3rtjFU"
     }
   ]
 }
