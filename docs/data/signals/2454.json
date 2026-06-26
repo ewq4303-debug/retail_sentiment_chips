@@ -1391,14 +1391,21 @@
       "date": "2026-06-23",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0506,
+      "strength": 0.0429,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-06-24",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3868,
+      "strength": 0.4207,
+      "matrix_cell": "provisional"
+    },
+    {
+      "date": "2026-06-25",
+      "signal": "PROVISIONAL",
+      "label": "暫定（集保未出）",
+      "strength": 0.1535,
       "matrix_cell": "provisional"
     }
   ]
