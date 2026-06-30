@@ -2,13 +2,6 @@
   "stock_id": "2454",
   "signals": [
     {
-      "date": "2025-08-27",
-      "signal": "PROVISIONAL",
-      "label": "暫定（集保未出）",
-      "strength": 0.0,
-      "matrix_cell": "provisional"
-    },
-    {
       "date": "2025-08-28",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
@@ -138,287 +131,287 @@
       "date": "2025-09-23",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.329,
+      "strength": 0.0,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-09-24",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.911,
+      "strength": 0.8852,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-09-25",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4953,
+      "strength": 0.4792,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-09-26",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.535,
+      "strength": 0.5179,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-09-30",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.2948,
+      "strength": 0.2826,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-01",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.6053,
+      "strength": 0.5874,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-02",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4546,
+      "strength": 0.4394,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-03",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0844,
+      "strength": 0.0905,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-07",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0724,
+      "strength": 0.0639,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-08",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1772,
+      "strength": 0.1817,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-09",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0576,
+      "strength": 0.0637,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-13",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3692,
+      "strength": 0.3572,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-14",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0098,
+      "strength": 0.0027,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-15",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.058,
+      "strength": 0.0641,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-16",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.232,
+      "strength": 0.2357,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-17",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.2321,
+      "strength": 0.2356,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-20",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0701,
+      "strength": 0.0753,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-21",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0091,
+      "strength": 0.003,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-22",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.025,
+      "strength": 0.0189,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-23",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.6253,
+      "strength": 0.6129,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-27",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4981,
+      "strength": 0.4987,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-28",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1125,
+      "strength": 0.1058,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-29",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3813,
+      "strength": 0.3721,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-30",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3784,
+      "strength": 0.3804,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-10-31",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0102,
+      "strength": 0.0155,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-03",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3894,
+      "strength": 0.3807,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-04",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.8018,
+      "strength": 0.7996,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-05",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4006,
+      "strength": 0.4017,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-06",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5163,
+      "strength": 0.5073,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-07",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5928,
+      "strength": 0.5832,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-10",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1901,
+      "strength": 0.1838,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-11",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1929,
+      "strength": 0.1865,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-12",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0962,
+      "strength": 0.1003,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-13",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1363,
+      "strength": 0.14,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-14",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0507,
+      "strength": 0.0457,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-17",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1269,
+      "strength": 0.1306,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-18",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5175,
+      "strength": 0.5095,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-19",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0412,
+      "strength": 0.0456,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-20",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1929,
+      "strength": 0.1962,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-21",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1256,
+      "strength": 0.1203,
       "matrix_cell": "provisional"
     },
     {
       "date": "2025-11-24",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0519,
+      "strength": 0.056,
       "matrix_cell": "provisional"
     },
     {
@@ -1363,49 +1356,49 @@
       "date": "2026-06-18",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.2108,
+      "strength": 0.2135,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-06-22",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.2108,
+      "strength": 0.2135,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-06-23",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.2108,
+      "strength": 0.2135,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-06-24",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.2108,
-      "matrix_cell": "賣/賣/散戶增"
+      "strength": 0.2135,
+      "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-25",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.2108,
+      "strength": 0.2135,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-06-26",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.0576,
+      "strength": 1.0373,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-06-29",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3821,
+      "strength": 0.5453,
       "matrix_cell": "provisional"
     }
   ]
