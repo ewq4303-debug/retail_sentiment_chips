@@ -1343,7 +1343,7 @@
       "signal": "CONFIRMED",
       "label": "強空",
       "strength": 0.2125,
-      "matrix_cell": "賣/買/散戶增"
+      "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-06-22",
@@ -1377,28 +1377,35 @@
       "date": "2026-06-26",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.0621,
+      "strength": 1.063,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-06-29",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5298,
+      "strength": 0.5284,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-06-30",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0502,
+      "strength": 0.0544,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-07-01",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.2782,
+      "strength": 0.2761,
+      "matrix_cell": "provisional"
+    },
+    {
+      "date": "2026-07-02",
+      "signal": "PROVISIONAL",
+      "label": "暫定（集保未出）",
+      "strength": 0.0013,
       "matrix_cell": "provisional"
     }
   ]
