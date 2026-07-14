@@ -147,6 +147,21 @@
       "delta_retail_shares_adj": 38456353.0,
       "reconcile_ok": true,
       "tdcc_noise_flag": false
+    },
+    {
+      "snapshot_date": "2026-07-09",
+      "cutoff": "2026-07-08",
+      "window": [
+        "2026-07-03",
+        "2026-07-08"
+      ],
+      "sr_pct": 9.0895,
+      "hb_pct": 68.8333,
+      "scissor_level": 59.7438,
+      "scissor_momentum": -0.3199,
+      "delta_retail_shares_adj": 12209248.0,
+      "reconcile_ok": true,
+      "tdcc_noise_flag": false
     }
   ]
 }
