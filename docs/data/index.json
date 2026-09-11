@@ -1,71 +1,71 @@
 {
-  "generated_at": "2026-09-10T05:55:46.458395+00:00",
+  "generated_at": "2026-09-11T05:55:02.964562+00:00",
   "backend": "finmind",
   "stocks": [
     {
       "stock_id": "2330",
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "latest_signal": "PROVISIONAL",
       "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.2217,
+      "latest_strength": 0.4411,
       "settled_signal": "CONFIRMED",
       "settled_label": "強空",
-      "settled_strength": 0.0778,
+      "settled_strength": 0.0761,
       "settled_date": "2026-09-03",
-      "latest_retail_net_flow_bps": -1.3365,
-      "latest_divergence": 0.4434
+      "latest_retail_net_flow_bps": -1.9499,
+      "latest_divergence": 0.8822
     },
     {
       "stock_id": "2317",
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "latest_signal": "PROVISIONAL",
       "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.106,
+      "latest_strength": 0.3109,
       "settled_signal": "NOISE",
       "settled_label": "雜訊／未留倉（湊張過水）",
       "settled_strength": 0.0,
       "settled_date": "2026-09-03",
-      "latest_retail_net_flow_bps": -1.1285,
-      "latest_divergence": 0.2121
+      "latest_retail_net_flow_bps": -4.2587,
+      "latest_divergence": 0.6219
     },
     {
       "stock_id": "2454",
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "latest_signal": "PROVISIONAL",
       "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.0167,
+      "latest_strength": 0.5694,
       "settled_signal": "CONFIRMED",
       "settled_label": "強多",
-      "settled_strength": 0.383,
+      "settled_strength": 0.3824,
       "settled_date": "2026-09-03",
-      "latest_retail_net_flow_bps": -5.3374,
-      "latest_divergence": 0.0334
+      "latest_retail_net_flow_bps": -1.9319,
+      "latest_divergence": 1.1388
     },
     {
       "stock_id": "0050",
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "latest_signal": "PROVISIONAL",
       "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.1467,
+      "latest_strength": 0.2032,
       "settled_signal": "CONFIRMED",
       "settled_label": "強多",
-      "settled_strength": 0.1404,
+      "settled_strength": 0.145,
       "settled_date": "2026-09-03",
-      "latest_retail_net_flow_bps": -3.0958,
-      "latest_divergence": 0.2934
+      "latest_retail_net_flow_bps": -5.8703,
+      "latest_divergence": 0.4063
     },
     {
       "stock_id": "2603",
-      "as_of": "2026-09-10",
+      "as_of": "2026-09-11",
       "latest_signal": "PROVISIONAL",
       "latest_label": "暫定（集保未出）",
-      "latest_strength": 0.2134,
+      "latest_strength": 0.5469,
       "settled_signal": "CONFIRMED",
       "settled_label": "強多",
-      "settled_strength": 0.1385,
+      "settled_strength": 0.1394,
       "settled_date": "2026-08-27",
-      "latest_retail_net_flow_bps": 0.5813,
-      "latest_divergence": -0.4268
+      "latest_retail_net_flow_bps": -0.5868,
+      "latest_divergence": -1.0938
     }
   ]
 }
