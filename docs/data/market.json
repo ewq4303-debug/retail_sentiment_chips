@@ -159,13 +159,21 @@
       "scissor_level": 41.4163,
       "scissor_momentum": -0.011,
       "n_stocks": 2955
+    },
+    {
+      "snapshot_date": "2026-09-18",
+      "sr_pct": 9.9874,
+      "hb_pct": 51.5495,
+      "scissor_level": 41.5621,
+      "scissor_momentum": 0.1457,
+      "n_stocks": 2956
     }
   ],
   "latest": {
-    "snapshot_date": "2026-09-11",
-    "sr_pct": 10.0111,
-    "hb_pct": 51.4275,
-    "scissor_momentum": -0.011,
-    "tilt": "散戶化"
+    "snapshot_date": "2026-09-18",
+    "sr_pct": 9.9874,
+    "hb_pct": 51.5495,
+    "scissor_momentum": 0.1457,
+    "tilt": "大戶集中"
   }
 }
