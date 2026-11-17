@@ -2,27 +2,6 @@
   "stock_id": "2317",
   "signals": [
     {
-      "date": "2026-01-12",
-      "signal": "PROVISIONAL",
-      "label": "暫定（集保未出）",
-      "strength": 0.0,
-      "matrix_cell": "provisional"
-    },
-    {
-      "date": "2026-01-13",
-      "signal": "PROVISIONAL",
-      "label": "暫定（集保未出）",
-      "strength": 0.0,
-      "matrix_cell": "provisional"
-    },
-    {
-      "date": "2026-01-14",
-      "signal": "PROVISIONAL",
-      "label": "暫定（集保未出）",
-      "strength": 0.0,
-      "matrix_cell": "provisional"
-    },
-    {
       "date": "2026-01-15",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
@@ -138,301 +117,301 @@
       "date": "2026-02-06",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.038,
+      "strength": 0.0,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-09",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.395,
+      "strength": 0.0,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-10",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.7724,
+      "strength": 0.0,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-11",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.1086,
+      "strength": 1.165,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-23",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3865,
+      "strength": 0.4194,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-24",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.122,
+      "strength": 1.1391,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-25",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.606,
+      "strength": 1.5686,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-02-26",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4257,
+      "strength": 0.4127,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-02",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.27,
+      "strength": 0.2665,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-03",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5262,
+      "strength": 0.5114,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-04",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.8171,
+      "strength": 0.7932,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-05",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.103,
+      "strength": 0.1075,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-06",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0383,
+      "strength": 0.0311,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-09",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.6817,
+      "strength": 0.6617,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-10",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5345,
+      "strength": 0.5163,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-11",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4672,
+      "strength": 0.4676,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-12",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3701,
+      "strength": 0.3558,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-13",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.049,
+      "strength": 0.0396,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-16",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0057,
+      "strength": 0.0143,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-17",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 1.3926,
+      "strength": 1.3599,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-18",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.6393,
+      "strength": 0.6181,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-19",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.6935,
+      "strength": 0.671,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-20",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0399,
+      "strength": 0.0271,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-23",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4935,
+      "strength": 0.4744,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-24",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0355,
+      "strength": 0.0478,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-25",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3191,
+      "strength": 0.3273,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-26",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0203,
+      "strength": 0.0082,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-27",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0521,
+      "strength": 0.0632,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-30",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.2042,
+      "strength": 0.1905,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-03-31",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3176,
+      "strength": 0.3029,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-01",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3829,
+      "strength": 0.3909,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-02",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0251,
+      "strength": 0.0137,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-07",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1305,
+      "strength": 0.1183,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-08",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4567,
+      "strength": 0.4638,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-09",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0466,
+      "strength": 0.0358,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-10",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0034,
+      "strength": 0.007,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-13",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1701,
+      "strength": 0.1792,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-14",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.5252,
+      "strength": 0.5313,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-15",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.1364,
+      "strength": 0.1447,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-16",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0884,
+      "strength": 0.0788,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-17",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.0167,
+      "strength": 0.0076,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-20",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.3222,
+      "strength": 0.3344,
       "matrix_cell": "provisional"
     },
     {
       "date": "2026-04-21",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.4331,
+      "strength": 0.45,
       "matrix_cell": "provisional"
     },
     {
@@ -719,98 +698,98 @@
       "date": "2026-06-18",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.9155,
+      "strength": 2.9231,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-22",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.9155,
+      "strength": 2.9231,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-23",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.9155,
+      "strength": 2.9231,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-24",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.9155,
+      "strength": 2.9231,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-25",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.9155,
+      "strength": 2.9231,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-26",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7868,
+      "strength": 2.7818,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-29",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7868,
+      "strength": 2.7818,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-06-30",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7868,
+      "strength": 2.7818,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-01",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7868,
+      "strength": 2.7818,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-02",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7868,
+      "strength": 2.7818,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-03",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.362,
+      "strength": 0.3618,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-06",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.362,
+      "strength": 0.3618,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-07",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.362,
+      "strength": 0.3618,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-08",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.362,
+      "strength": 0.3618,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
@@ -852,210 +831,210 @@
       "date": "2026-07-17",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 1.2798,
+      "strength": 1.2443,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-07-20",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 1.2798,
+      "strength": 1.2443,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-07-21",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 1.2798,
+      "strength": 1.2443,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-07-22",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 1.2798,
+      "strength": 1.2443,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-07-23",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 1.2798,
+      "strength": 1.2443,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-07-24",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.3299,
+      "strength": 0.3319,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-07-27",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.3299,
+      "strength": 0.3319,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-28",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.3299,
+      "strength": 0.3319,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-29",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.3299,
+      "strength": 0.3319,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-07-30",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.3299,
+      "strength": 0.3319,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-07-31",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 3.9773,
+      "strength": 4.0074,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-03",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 3.9773,
+      "strength": 4.0074,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-04",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 3.9773,
+      "strength": 4.0074,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-08-05",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 3.9773,
+      "strength": 4.0074,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-06",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 3.9773,
+      "strength": 4.0074,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-07",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0314,
+      "strength": 0.0301,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-08-10",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0314,
+      "strength": 0.0301,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-11",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0314,
+      "strength": 0.0301,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-08-12",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0314,
+      "strength": 0.0301,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-08-13",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0314,
+      "strength": 0.0301,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-08-14",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.406,
+      "strength": 0.4125,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-08-17",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.406,
+      "strength": 0.4125,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-08-18",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.406,
+      "strength": 0.4125,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-08-19",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.406,
+      "strength": 0.4125,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-08-20",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.406,
+      "strength": 0.4125,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-08-21",
       "signal": "PENDING",
       "label": "待確認（流量與存量衝突）",
-      "strength": 0.1347,
+      "strength": 0.1398,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-08-24",
       "signal": "PENDING",
       "label": "待確認（流量與存量衝突）",
-      "strength": 0.1347,
+      "strength": 0.1398,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-08-25",
       "signal": "PENDING",
       "label": "待確認（流量與存量衝突）",
-      "strength": 0.1347,
+      "strength": 0.1398,
       "matrix_cell": "賣/賣/散戶增"
     },
     {
       "date": "2026-08-26",
       "signal": "PENDING",
       "label": "待確認（流量與存量衝突）",
-      "strength": 0.1347,
+      "strength": 0.1398,
       "matrix_cell": "買/賣/散戶增"
     },
     {
       "date": "2026-08-27",
       "signal": "PENDING",
       "label": "待確認（流量與存量衝突）",
-      "strength": 0.1347,
+      "strength": 0.1398,
       "matrix_cell": "買/買/散戶增"
     },
     {
@@ -1097,35 +1076,35 @@
       "date": "2026-09-04",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1192,
+      "strength": 0.1223,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-09-07",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1192,
+      "strength": 0.1223,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-09-08",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1192,
+      "strength": 0.1223,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-09-09",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1192,
+      "strength": 0.1223,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-09-10",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1192,
+      "strength": 0.1223,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
@@ -1165,254 +1144,268 @@
     },
     {
       "date": "2026-09-18",
-      "signal": "PENDING",
-      "label": "待確認（流量與存量衝突）",
-      "strength": 0.0149,
+      "signal": "CONFIRMED",
+      "label": "強多",
+      "strength": 0.0101,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-09-21",
-      "signal": "PENDING",
-      "label": "待確認（流量與存量衝突）",
-      "strength": 0.0149,
+      "signal": "CONFIRMED",
+      "label": "強多",
+      "strength": 0.0101,
       "matrix_cell": "賣/買/大戶增"
     },
     {
       "date": "2026-09-22",
-      "signal": "PENDING",
-      "label": "待確認（流量與存量衝突）",
-      "strength": 0.0149,
+      "signal": "CONFIRMED",
+      "label": "強多",
+      "strength": 0.0101,
       "matrix_cell": "買/買/大戶增"
     },
     {
       "date": "2026-09-23",
-      "signal": "PENDING",
-      "label": "待確認（流量與存量衝突）",
-      "strength": 0.0149,
+      "signal": "CONFIRMED",
+      "label": "強多",
+      "strength": 0.0101,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-09-24",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.0624,
+      "strength": 0.0594,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-09-29",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.0624,
+      "strength": 0.0594,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-09-30",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.0624,
-      "matrix_cell": "買/買/散戶增"
+      "strength": 0.0594,
+      "matrix_cell": "買/賣/散戶增"
     },
     {
       "date": "2026-10-01",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 0.0624,
+      "strength": 0.0594,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-10-02",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 1.0574,
+      "strength": 1.0779,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-05",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 1.0574,
+      "strength": 1.0779,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-10-06",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 1.0574,
+      "strength": 1.0779,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-07",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 1.0574,
+      "strength": 1.0779,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-08",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7859,
+      "strength": 2.8393,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-12",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7859,
+      "strength": 2.8393,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-13",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7859,
+      "strength": 2.8393,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-14",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7859,
+      "strength": 2.8393,
       "matrix_cell": "買/買/散戶增"
     },
     {
       "date": "2026-10-15",
       "signal": "CONFIRMED",
       "label": "強空",
-      "strength": 2.7859,
+      "strength": 2.8393,
       "matrix_cell": "賣/買/散戶增"
     },
     {
       "date": "2026-10-16",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.4952,
+      "strength": 0.5066,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-19",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.4952,
+      "strength": 0.5066,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-10-20",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.4952,
+      "strength": 0.5066,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-21",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.4952,
+      "strength": 0.5066,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-22",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.3054,
+      "strength": 0.3087,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-27",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.3054,
+      "strength": 0.3087,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-28",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.3054,
+      "strength": 0.3087,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-29",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.3054,
+      "strength": 0.3087,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-10-30",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0978,
+      "strength": 0.1056,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-11-02",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0978,
+      "strength": 0.1056,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-11-03",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0978,
+      "strength": 0.1056,
       "matrix_cell": "買/買/大戶增"
     },
     {
       "date": "2026-11-04",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0978,
+      "strength": 0.1056,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-11-05",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.0978,
+      "strength": 0.1056,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-11-06",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1013,
+      "strength": 0.102,
       "matrix_cell": "賣/賣/大戶增"
     },
     {
       "date": "2026-11-09",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1013,
+      "strength": 0.102,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-11-10",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1013,
+      "strength": 0.102,
       "matrix_cell": "買/買/大戶增"
     },
     {
       "date": "2026-11-11",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1013,
+      "strength": 0.102,
       "matrix_cell": "買/買/大戶增"
     },
     {
       "date": "2026-11-12",
       "signal": "CONFIRMED",
       "label": "強多",
-      "strength": 0.1013,
+      "strength": 0.102,
       "matrix_cell": "買/賣/大戶增"
     },
     {
       "date": "2026-11-13",
       "signal": "PROVISIONAL",
       "label": "暫定（集保未出）",
-      "strength": 0.075,
+      "strength": 0.0697,
+      "matrix_cell": "provisional"
+    },
+    {
+      "date": "2026-11-16",
+      "signal": "PROVISIONAL",
+      "label": "暫定（集保未出）",
+      "strength": 0.7869,
+      "matrix_cell": "provisional"
+    },
+    {
+      "date": "2026-11-17",
+      "signal": "PROVISIONAL",
+      "label": "暫定（集保未出）",
+      "strength": 0.1347,
       "matrix_cell": "provisional"
     }
   ]
